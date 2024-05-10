@@ -11,13 +11,13 @@ contract SimpleStorage {
         mycelia = Mycelia(myceliaAddress);
     }
 
-    function storeValues(
+    function verifySig(
         uint8 parity,
         bytes32 px,
         bytes32 e,
         bytes32 s,
         bytes32 message
-    ) public returns (bool) {
+    ) public view returns (bool) {
         // Call the updated verify function and return the result
         return mycelia.verify(parity, px, e, s, message);
     }
